@@ -1,6 +1,7 @@
 # Semantic Mapping with Simultaneous Object Detection and Localization
 > <font
 > size=4> 论文地址：[https://arxiv.org/abs/1810.11525](https://arxiv.org/abs/1810.11525)
+
 > 论文视频：[https://www.youtube.com/watch?v=W-6ViSlrrZg](https://www.youtube.com/watch?v=W-6ViSlrrZg)
 
 ## 简介
@@ -9,10 +10,12 @@
 
 ## 目标
 <font size=4> &#160; &#160; &#160; &#160;<font color=red size=4>使机器人能够在物体层面上对世界进行语义映射，其中世界的表示是对物体类别和位姿的置信度。</font>随着神经网络物体检测的不断进步，作者为语义映射提供了更强大的构建模块。然而，由于训练数据集的偏差和多样性不足，这种物体检测在野外经常是嘈杂的。并且<font color=red size=4>对来自此类网络的错误检测保持鲁棒性。</font>作者将物体类别建模为生成推理的隐藏状态的一部分，而不是对检测器给出的类标签做出选择。
+
 <font size=4> &#160; &#160; &#160; &#160;考虑到运动式RGB-D观测，<font color=red size=4>作者的目标是推断解释观测结果的物体类别和位姿，同时考虑物体之间的上下文关系和物体位姿的时间一致性。在语义映射期间显式地建模物体-物体上下文关系，而不是假设每个物体在环境中是独立的。</font>简单来说就是相同类别的物体比不同类别的物体更容易共同出现。此外，应加强物理合理性，以防止物体相互交叉，以及漂浮在空中。
+ 
 <font size=4> &#160; &#160; &#160; &#160;物体位姿的时间一致性在语义映射中也起着重要作用。物体可以保留在过去观察的位置，或者随着时间的推移逐渐改变它们的语义位置。<font color=red size=4>在遮挡的情况下，建模时间一致性可能有助于部分观察物体的定位。通过时间一致性建模，机器人可以获得物体永久性的概念，</font>例如，即使没有直接观察物体，也相信物体仍然存在。
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20190922113519191.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xoNjQxNDQ2ODI1,size_16,color_FFFFFF,t_70#pic_center)
-<center>图1 每列显示环境的RGB图像，以及由检测和定位物体组成的相应语义映射。
+ 
+
 
 ## 创新点
 
